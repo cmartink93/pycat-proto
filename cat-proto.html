@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://d3js.org/d3.v7.min.js" charset="utf-8"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div id="mainContainer">
+        <svg></svg>
+    </div>
+    <div class="slidecontainer">
+        <label> Latitude (centerX)
+            <input type="range" min="0" max="360" value="50" class="slider lemInput" id="latRange">
+            <p id="latP"></p>
+        </label>
+        <br>
+        <label> Longitude (centerY)
+            <input type="range" min="1" max="400" value="50" class="slider lemInput" id="lonRange">
+            <p id="lonP"></p>
+        </label>
+        <br>
+        <label> Length (a)
+            <input type="range" min="0" max="500" value="50" class="slider lemInput" id="aRange">
+            <p id="aP"></p>
+        </label>
+        <br>
+        <label> Cone Angle (psi)
+            <input type="range" min="0" max="3.14" value="50" class="slider lemInput" id="psiRange">
+            <p id="psiP"></p>
+        </label>
+        <br>
+        <label> Rotation Angle (phi)
+            <input type="range" min="0" max="360" value="50" class="slider lemInput" id="phiRange">
+            <p id="phiP"></p>
+        </label>
+    </div>
+    
+</body>
+
+<script src="cat-proto.js" charset="utf-8"></script>
+</html>
