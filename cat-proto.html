@@ -9,10 +9,24 @@
     <title>Document</title>
 </head>
 <body>
+    
     <div id="mainContainer">
-        <svg></svg>
+        <!--<canvas id="cmeCanvas" width="500px" height="400px"></canvas>-->
+            <svg>
+                <defs>
+                    <pattern id="img1" patternUnits="userSpaceOnUse" width="500" height="400">
+                      <image id="patternImg" href="" x="0" y="0" width="500" height="400" />
+                    </pattern>
+                </defs>
+            </svg>
+        
     </div>
     <div class="slidecontainer">
+        <label> Slide through images
+            <input type="range" min="0" max="9" value="0" class="slider lemInput" id="slideRange">
+            <p id="imgSlider"></p>
+        </label>
+        <br>
         <label> Latitude (degrees)
             <input type="range" min="0.0" max="180.0" value="45.0" class="slider lemInput" id="latRange">
             <p id="latP"></p>

@@ -1,5 +1,9 @@
 // INITIALIZE GLOBAL VARIABLES
 
+const homeDir = '/data';
+let currentImg = 0;
+let imgNum;
+
 const width = 500;
 const height = 400;
 const twoPi = Math.PI * 2;
@@ -91,15 +95,61 @@ for (let pt = 0; pt <= Npoints; pt+=1) {
     i1 = i2;
 }
 
+let imageArr = [];
+let fetchURL = homeDir + "/images.json";
+const fetchRequest = new Request(fetchURL);
+
 
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("DOM fully loaded and parsed");
-
-    // CALCULATE COORDINATE ARRAYS & THE RESPECTIVE PATH
+    // SET UP INITIAL DOCUMENT
 
     
+    calcPath = createPath();
+
+    svg = d3.select('svg')
+        .attr('width', width)
+        .attr('height', height);
+
+    svg.append('rect') //this is where we want to put the slideshow of fits files
+        .attr('width', width)
+        .attr('height', height)
+        .attr('fill','url(#img1)')
+        .attr('id','cmeBkg');
+
+    svg.append('path')
+        .attr('id', 'calculatedPath')
+        .attr('d', calcPath)
+        .attr('stroke','black')
+        .style('fill','transparent');
+
+    console.log("DOM fully loaded and parsed");
+
+    fetch(fetchRequest)
+    .then((response) => response.json())
+    .then((data) => {
+        imgNum = 0;
+        data.forEach(function(imgName, idx) {
+            imageArr.push(imgName['image']);
+            imgNum ++;
+        });
+    })
+    .then(() => {
+        let patImg = document.getElementById("patternImg");
+        patImg.href.baseVal = imageArr[0];
+    })
+
+    document.getElementById('slideRange').addEventListener('mouseup', function(){
+        let currentIdx = this.value
+        let cmePatternImg = document.getElementById("patternImg");
+        cmePatternImg.href.baseVal = imageArr[currentIdx];
+        console.log(cmePatternImg)
+    })
+
+    
+    // CALCULATE COORDINATE ARRAYS & THE RESPECTIVE PATH
+
 
     function createPath() {
         let yPrime = [];
@@ -200,27 +250,66 @@ document.addEventListener("DOMContentLoaded", function() {
         //d3.select('#calculatedPath').attr('transform', `rotate(${phi}, ${centerX}, ${centerY})`);
 
     })
+    
 
 
-
-    // SET UP INITIAL DOCUMENT
 
     
-    calcPath = createPath();
-
-    svg = d3.select('svg')
-        .attr('width', width)
-        .attr('height', height);
-
-    svg.append('rect') //this is where we want to put the slideshow of fits files
-        .attr('width', width)
-        .attr('height', height)
-        .attr('fill','lightgray');
-
-    svg.append('path')
-        .attr('id', 'calculatedPath')
-        .attr('d', calcPath)
-        .attr('stroke','black')
-        .style('fill','transparent');
 
 });
+/*
+let imageArr = [];
+let fetchURL = homeDir + "/images.json";
+const fetchRequest = new Request(fetchURL);
+
+fetch(fetchRequest)
+    .then((response) => response.json())
+    .then((data) => {
+        data.forEach(function(imgName, idx) {
+            imageArr.push(homeDir + imgName['image']);
+        });
+    })
+    .then((imageArr) )
+   
+let canvas = document.getElementById("#cmeCanvas");
+let ctx = canvas.getContext('2d');
+ctx.canvas.width  = width;
+ctx.canvas.height  = height;
+let imageObj = new Image();
+imageObj.src = imageArr[0];
+imageObj.onload = function () {
+    canvas.height = imageObj.naturalHeight;
+    canvas.width = imageObj.naturalWidth;
+    context.drawImage(imageObj, 0, 0)};
+*/
+/*
+animatorObject.images[ui.value].src
+animatorObject.currentFrame = ui.value;
+items.push(dataServiceUrl + val['url'])
+drawImageOnCanvas
+
+
+
+
+
+$.ajax({
+    type: "GET",
+    url: advisoryViewer.ajaxUrl,
+    success: function (data) {
+        data = JSON.sringify(data);
+        data = data.replace(/\\r/g,'');
+        advisoryData = JSON.parse(data);
+    }
+    error: function (err) {
+        alert.err
+    }
+})
+
+url_configs
+{"tecAnimation": "/products/animations/glotec"}
+
+
+
+
+*/
+  
