@@ -140,11 +140,10 @@ document.addEventListener("DOMContentLoaded", function() {
         patImg.href.baseVal = imageArr[0];
     })
 
-    document.getElementById('slideRange').addEventListener('mouseup', function(){
+    document.getElementById('slideRange').addEventListener('change', function(){
         let currentIdx = this.value
         let cmePatternImg = document.getElementById("patternImg");
         cmePatternImg.href.baseVal = imageArr[currentIdx];
-        console.log(cmePatternImg)
     })
 
     
