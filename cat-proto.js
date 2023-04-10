@@ -4,8 +4,8 @@ const homeDir = '/data';
 let currentImg = 0;
 let imgNum;
 
-const width = 500;
-const height = 400;
+const width = 512;
+const height = 512;
 const twoPi = Math.PI * 2;
 const deg2rad = Math.PI/180;
 
