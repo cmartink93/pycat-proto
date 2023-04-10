@@ -256,59 +256,5 @@ document.addEventListener("DOMContentLoaded", function() {
     
 
 });
-/*
-let imageArr = [];
-let fetchURL = homeDir + "/images.json";
-const fetchRequest = new Request(fetchURL);
 
-fetch(fetchRequest)
-    .then((response) => response.json())
-    .then((data) => {
-        data.forEach(function(imgName, idx) {
-            imageArr.push(homeDir + imgName['image']);
-        });
-    })
-    .then((imageArr) )
-   
-let canvas = document.getElementById("#cmeCanvas");
-let ctx = canvas.getContext('2d');
-ctx.canvas.width  = width;
-ctx.canvas.height  = height;
-let imageObj = new Image();
-imageObj.src = imageArr[0];
-imageObj.onload = function () {
-    canvas.height = imageObj.naturalHeight;
-    canvas.width = imageObj.naturalWidth;
-    context.drawImage(imageObj, 0, 0)};
-*/
-/*
-animatorObject.images[ui.value].src
-animatorObject.currentFrame = ui.value;
-items.push(dataServiceUrl + val['url'])
-drawImageOnCanvas
-
-
-
-
-
-$.ajax({
-    type: "GET",
-    url: advisoryViewer.ajaxUrl,
-    success: function (data) {
-        data = JSON.sringify(data);
-        data = data.replace(/\\r/g,'');
-        advisoryData = JSON.parse(data);
-    }
-    error: function (err) {
-        alert.err
-    }
-})
-
-url_configs
-{"tecAnimation": "/products/animations/glotec"}
-
-
-
-
-*/
   

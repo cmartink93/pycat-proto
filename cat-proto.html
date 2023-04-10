@@ -9,16 +9,14 @@
     <title>Document</title>
 </head>
 <body>
-    
     <div id="mainContainer">
-        <!--<canvas id="cmeCanvas" width="500px" height="400px"></canvas>-->
-            <svg>
-                <defs>
+        <svg>
+            <defs>
                     <pattern id="img1" patternUnits="userSpaceOnUse" width="500" height="400">
                       <image id="patternImg" href="" x="0" y="0" width="500" height="400" />
                     </pattern>
                 </defs>
-            </svg>
+        </svg>
         
     </div>
     <div class="slidecontainer">
@@ -28,23 +26,23 @@
         </label>
         <br>
         <label> Latitude (degrees)
-            <input type="range" min="0.0" max="180.0" value="45.0" class="slider lemInput" id="latRange">
-            <p id="latP">45.0</p>
+            <input type="range" min="-60.0" max="60.0" value="10.0" class="slider lemInput" id="latRange">
+            <p id="latP"></p>
         </label>
         <br>
         <label> Longitude (degrees)
-            <input type="range" min="-0.0" max="360.0" value="90.0" class="slider lemInput" id="lonRange">
-            <p id="lonP">90.0</p>
+            <input type="range" min="-90.0" max="90.0" value="50.0" class="slider lemInput" id="lonRange">
+            <p id="lonP"></p>
         </label>
         <br>
-        <label> Length a
+        <label> Length (a)
             <input type="range" min="0.0" max="500.0" value="50.0" class="slider lemInput" id="aRange">
-            <p id="aP">50.0</p>
+            <p id="aP"></p>
         </label>
         <br>
-        <label> Cone Angle psi (degrees)
+        <label> Cone Angle Psi (degrees)
             <input type="range" min="0.0" max="90.0" value="20.0" class="slider lemInput" id="psiRange">
-            <p id="psiP">20.0</p>
+            <p id="psiP"></p>
         </label>
     </div>
     
