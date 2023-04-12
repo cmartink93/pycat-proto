@@ -9,8 +9,8 @@ const height = 512;
 const twoPi = Math.PI * 2;
 const deg2rad = Math.PI/180;
 
-let centerY = 250;
-let centerZ = 200;
+let centerY = 256;
+let centerZ = 256;
 let latitude = Number(document.getElementById('latRange').value);
 let longitude = Number(document.getElementById('lonRange').value);
 let aWidth = Number(document.getElementById('aRange').value);
